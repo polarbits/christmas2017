@@ -76,7 +76,7 @@ endpoints:
               type: string
               description: "Wishes to send"
               example: "Merry Christmas" 
-        fail:
+      fail:
           description: Failed
           exit_code: 400
           parameters:
