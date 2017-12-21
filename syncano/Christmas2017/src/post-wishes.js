@@ -13,7 +13,7 @@ export default (ctx) => {
     //, wishDate: Date.now()
   })
   .then(wishObj => {
-    response.json({msg: `${ctx.args.wishes} ${ctx.args.receiver}! od ${ctx.args.sender}!. Wishes with ID ${wishObj.id} created! Wishes id: ${wishObj.id}`})
+    response.json(wishObj.cryptoId)
   })
 }
 }
