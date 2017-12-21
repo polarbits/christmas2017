@@ -9,7 +9,7 @@ export default (ctx) => {
     sender: ctx.args.sender,
     receiver: ctx.args.receiver,
     wishes: ctx.args.wishes,
-    cryptoId: crypto.randomBytes(8).toString('hex')
+    cryptoId: crypto.randomBytes(2).toString('hex')
     //, wishDate: Date.now()
   })
   .then(wishObj => {
