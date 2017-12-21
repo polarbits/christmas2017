@@ -1,20 +1,37 @@
-name: hello
-description: Hello World Socket
+name: Christmas2017
+description: Socket for christmas 2017 from Polarbits.
 version: 0.0.1
 
+classes:
+  wishes: 
+    - name: sender
+      type: string
+    - name: receiver
+      type: string
+    - name: wishes
+      type: string
+    - name: wishDate
+      type: datetime
+    - name: cryptoId
+      type: string
+
 endpoints:
-  hello:
+  post-wishes:
     description: Hello world!
-    file: hello.js
+    file: post-wishes.js
     parameters:
-      firstname:
+      sender:
         type: string
-        description: "First name of the person you want to greet"
-        example: "Tyler"
-      lastname:
+        description: "Wishes sender name"
+        example: "Polarbits"
+      receiver:
         type: string
-        description: "Last name of the person you want to greet"
-        example: "Durden"
+        description: "Wishes receiver name"
+        example: "You"
+      wishes:
+        type: string
+        description: "Wishes to send"
+        example: "Merry Christmas"
     response:
       mimetype: application/json
       examples:
@@ -23,12 +40,48 @@ endpoints:
           description: Success
           example: |
             {
-            "message": "Hello Tyler Durden!"
+            "message": "Merry Christmas for You! With love from Polarbits"
             }
         -
           exit_code: 400
           description: Failed
           example: |
             {
-              "message": "You have to send "firstname" and "lastname" arguments!"
+              "message": "You have to send "sender", "receiver" and "wishes" arguments!"
             }
+  get-wishes:
+    description: xmas getWishes sample!
+    file: get-wishes.js
+    parameters:
+      id:
+        type: integer
+        description: "Wishes id"
+        example: "1"
+    response:
+      mimetype: application/json
+      success: 
+        description: Success
+        parameters:
+          type: object
+          items:
+            sender:
+              type: string
+              description: "Wishes sender name"
+              example: "Polarbits"
+            receiver:
+              type: string
+              description: "Wishes receiver name"
+              example: "You"
+            wishes:
+              type: string
+              description: "Wishes to send"
+              example: "Merry Christmas" 
+        fail:
+          description: Failed
+          exit_code: 400
+          parameters:
+            message:
+              type: string
+              description: "There is no such a wishes"
+              example: "Wishes not found"
+    
