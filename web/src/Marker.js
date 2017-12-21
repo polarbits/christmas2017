@@ -3,7 +3,7 @@ import React from 'react';
 const Marker = () => {
   return (
     <div className="container">
-      <h1>Home!!</h1>
+      <img src="/assets/img/marker.png"/>
     </div>
   );
 }
