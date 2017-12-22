@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
 
-import Home from './Home';
-import Wish from './Wish';
-import Marker from './Marker';
+import Home from './components/Home';
+import Wish from './components/Wish';
+import Marker from './components/Marker';
 
 class App extends Component {
   render() {

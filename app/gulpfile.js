@@ -55,7 +55,7 @@ gulp.task('sass', function() {
 
 gulp.task('html', function() {
   return gulp
-    .src('./app/content/*.html')
+    .src('./app/content/**/*.html')
     .pipe(headerfooter.header('./app/partials/header.html'))
     .pipe(headerfooter.footer('./app/partials/footer.html'))
     .pipe(gulp.dest('./dist/'));
@@ -70,7 +70,7 @@ gulp.task('serve', ['sass', 'html', 'scripts', 'assets'], function() {
   gulp.watch('app/partials/*.html', ['html']);
   gulp.watch('app/js/*.js', ['scripts']);
   gulp.watch('app/assets/**/*', ['assets']);
-  gulp.watch('dist/*.html').on('change', browserSync.reload);
+  gulp.watch('dist/**/*.html').on('change', browserSync.reload);
   gulp.watch('dist/js/*.js').on('change', browserSync.reload);
 });
 
