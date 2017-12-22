@@ -7,16 +7,21 @@
     <a-scene embedded  arjs='sourceType: webcam;'> 
  
         <a-assets>
-            <a-asset-item id="tree" src="/assets/scene.gltf">
+            <a-asset-item id="tree-obj" src="/assets/lowpolytree.obj"></a-asset-item>
+            <a-asset-item id="tree-mtl" src="/assets/lowpolytree.mtl"></a-asset-item>
           </a-assets>
       
-      <a-marker preset='custom' type='pattern' url='/assets/pattern-marker.patt'>
-        <a-plane position="0 -0.5 0 " rotation="-90 0 0" width="2" height="2" color="#0B486B"></a-plane>
-        
-        <a-entity position="0 0 0.7" scale="0.0022 0.0022 0.0022" rotation="-90 0 0" gltf-model="#tree"></a-entity>
-        <a-text class="sender-ar--js" position="-0.5 -0.2 -0.5 " rotation="-90 0 0" value="Hello, World!"></a-text>
-        <a-text class="receiver-ar--js" position="-0.5 -0.2 -0.5 " rotation="-90 0 0" value="Hello, World!"></a-text>
-        <a-text class="wishes-ar--js" position="-0.5 1 -0.5 " rotation="-90 0 0" value="Hello, World!"></a-text>
+      <a-marker preset='custom' scale="0.7 0.7 0.3" type='pattern' url='/assets/pattern-marker.patt'>
+        <a-plane position="0 0 0 " rotation="-90 0 0" width="3" height="3" color="#0B486B"></a-plane>
+        <a-plane position="0 1.5 1.5" rotation="180 0 0" width="3" height="3" color="#ffffff"></a-plane>
+      
+        <a-entity>
+
+        <a-entity position="0 1 0.8" scale="0.4 0.4 0.4" rotation="-90 0 0"  obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+      </a-entity>
+        <a-text class="sender-ar--js" position="-0.2 2.5 1.4 " scale="0.7 0.7 0.7" color="#000" rotation="180 0 20" value="Hello, World!"></a-text>
+        <a-text class="receiver-ar--js" position="-1.2 0.1 -1.2 " scale="0.7 0.7 0.7" rotation="-90 0 0" value="Hello, World!"></a-text>
+        <a-text class="wishes-ar--js" width="3" position="-1.2 0.1 -.8 " scale="0.7 0.7 0.7" rotation="-90 0 0" value="Hello, World!"></a-text>
         
         </a-marker>
        

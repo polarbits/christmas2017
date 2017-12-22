@@ -1,5 +1,8 @@
 const wishes = require('./wishes.js');
 
+
+if (document.querySelector('[name=sender]')){ 
+
 const url = 'https://icy-bush-5836.syncano.space/Christmas2017/post-wishes/'; 
 const button = document.querySelector('.send--js'); 
 button.addEventListener('click', (e) => { 
@@ -31,3 +34,5 @@ button.addEventListener('click', (e) => {
       inputLinkDiv.classList.remove('form--disabled'); 
     }) 
 }); 
+
+}
