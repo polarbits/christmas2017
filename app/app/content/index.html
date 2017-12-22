@@ -1,0 +1,50 @@
+<body>
+
+  <div class="main">
+
+    <div class="logo">
+      <svg version="1.1" class="bear" id="bear" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 133.3 135" style="enable-background:new 0 0 133.3 135;" xml:space="preserve">
+        <path class="st0" d="M118.7,37.1l8.2-11.9l-1.3-18l-12-7.2L94.9,17.1L66.6,8.3l-28.3,8.9L19.6,0l-12,7.2l-1.3,18l8.2,11.9L0,91.4
+       l14.4,32.2l41.7,5l6.2,6.4H71l6.2-6.4l41.7-5l14.4-32.2L118.7,37.1z M130.4,90.4l-19.4,5.1l6.7-52.2L130.4,90.4z M108.4,96.6
+       l-21.7,19.8L83,73.3L68.9,61.1l8.9-3.8l8.3,8.3l7.3-7.3l18.9,8.7L108.4,96.6z M114,3.1l9.2,5.5l1.1,15.9l-7.2,10.5l-20-16.6
+       L114,3.1z M116,37.4l-3.5,26.9l-8.5-3.9l-7-38.7L116,37.4z M68,11.3l26.2,8.2l7.2,39.6l-16.4-7.6L68,58.8V11.3z M68,63.5l12.6,11
+       l3.7,43.1l-12.8-2l9.2-3.7l-1.2-13.8L68,93.4V63.5z M39.2,19.5l26.3-8.2v47.6l-17-7.3L32,59.1L39.2,19.5z M61.9,115.6l-12.9,2
+       l3.7-43.1l12.7-11.1v30l-11.5,4.7l-1.2,13.8L61.9,115.6z M46.6,116.4L24.9,96.6l-3.8-29.7l18.9-8.7l7.3,7.3l8.3-8.3l8.9,3.8
+       L50.3,73.3L46.6,116.4z M29.2,60.4l-8.5,3.9l-3.5-26.9l19-15.7L29.2,60.4z M9,24.5l1.1-15.9l9.2-5.5l16.9,15.4l-20,16.6L9,24.5z
+        M15.5,43.3l6.7,52.2L2.9,90.4L15.5,43.3z M16.1,121.3L3.5,93.2l19.6,5.1L53,125.7L16.1,121.3z M76.1,126.2L76.1,126.2l-6.1,6.3
+       h-3.4h-3.2l-6.1-6.3l0,0l-6.9-6.3l15.1-2.4v0l0.2-0.1l1-0.2l1.3,0.2l0.1,0v0l15,2.4L76.1,126.2z M117.2,121.3l-36.9,4.4l29.9-27.3
+       l19.6-5.1L117.2,121.3z" />
+        </g>
+      </svg>
+
+
+    </div>
+    <h1>Polarbits_ Christmas Card</h1>
+    <form>
+      <div class="form">
+        <label for="sender">
+          From:
+          <input type="text" name="sender" pattern=".{3,}" required title="3 characters minimum" />
+        </label>
+        <label for="receiver">
+          To:
+          <input type="text" name="receiver" pattern=".{3,}" required title="3 characters minimum" />
+        </label>
+        <label for="wishes">
+          Wishes:
+          <input type="text" name="wishes" pattern=".{3,}" required title="3 characters minimum" />
+        </label>
+        <button class="form__send send--js" value="Submit">Send wishes</button>
+      </div>
+    </form>
+
+    <div class="message message--disabled">
+      <p>copy the message below and send it to your friends!</p>
+      <textarea type="text" readonly="readonly" rows="20" class="form__message"></textarea>
+      <button class="form__send textareacopybtn--js" value="Submit">Copy to clipboard</button>
+      <button class="form__send new--js" value="Submit">New wishes</button>
+    </div>
+  </div>
+
+  </div>

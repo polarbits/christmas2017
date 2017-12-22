@@ -30,20 +30,12 @@ gulp.task('scripts', function() {
   gulp
     .src('app/js/app.js')
     .pipe(eslint())
-    .on('error', function(err) {
-      browserSync.notify(err.message, 3000);
-      this.emit('end');
-    })
     .pipe(
       babel({
         presets: ['es2015']
       })
     )
     .pipe(browserify())
-    .on('error', function(err) {
-      browserSync.notify(err.message, 3000);
-      this.emit('end');
-    })
     .pipe(gulp.dest('./dist/js'));
 });
 

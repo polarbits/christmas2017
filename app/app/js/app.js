@@ -11,8 +11,8 @@ if (document.querySelector('[name=sender]')){
   });
 
 const url = 'https://icy-bush-5836.syncano.space/Christmas2017/post-wishes/'; 
-const button = document.querySelector('.send--js'); 
-button.addEventListener('click', (e) => { 
+const sendWishesButton = document.querySelector('.send--js'); 
+sendWishesButton.addEventListener('click', (e) => { 
   e.preventDefault(); 
   const senderValue = document.querySelector('[name=sender]').value; 
   const receiverValue = document.querySelector('[name=receiver]').value; 
@@ -30,9 +30,9 @@ button.addEventListener('click', (e) => {
     .then(function(json){  
       return json; 
     }) 
-    .then(function(crypto){ 
-      const inputLink = document.querySelector('.form__link'); 
-      inputLink.value = `Hey ${receiverValue}!
+    .then(function(crypto){
+      const textareaMessage = document.querySelector('.form__message'); 
+      textareaMessage.value = `Hey ${receiverValue}!
 I have a special message for you!
 Open this link on your mobile phone (safari/chrome)
 📱 : https://xmas2017.polarbits.co/wish/#${crypto} 
@@ -41,11 +41,37 @@ Open the second link on your computer
 💻 : https://xmas2017.polarbits.co/marker/
 Point your phone's camera at the bear marker!
 Merry Christmas 🎄!`
-      const form = document.querySelector('.form__form'); 
-      form.classList.add('form--disabled'); 
-      const inputLinkDiv = document.querySelector('.form__input'); 
-      inputLinkDiv.classList.remove('form--disabled'); 
+      const form = document.querySelector('.form'); 
+      form.classList.add('form--disabled');
+      const message = document.querySelector('.message'); 
+      message.classList.remove('message--disabled');
     }) 
 }); 
 
+const copyTextareaBtn = document.querySelector('.textareacopybtn--js');
+
+copyTextareaBtn.addEventListener('click', function(event) {
+  const copyTextarea = document.querySelector('.form__message');
+  copyTextarea.select();
+
+  try {
+    const successful = document.execCommand('copy');
+    copyTextareaBtn.textContent = 'Message is in your clipboard!';
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+});
+
+
+const newWishesButton = document.querySelector('.new--js'); 
+newWishesButton.addEventListener('click', (e) => { 
+  e.preventDefault();
+  const form = document.querySelector('.form');
+  form.classList.remove('form--disabled');
+  const message = document.querySelector('.message'); 
+  message.classList.add('message--disabled');
+  copyTextareaBtn.textContent = 'Copy to clipboard';
+  document.querySelector('[name=receiver]').value = '';
+});
 }
+

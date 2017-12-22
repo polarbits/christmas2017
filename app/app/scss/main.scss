@@ -130,20 +130,24 @@ h1 {
 	} 
 
 	&--disabled{ 
-	  display:none 
+	  display:none; 
 	} 
 	&--enabled{ 
-	  display:block 
+	  display:block; 
 	} 
 }
 
-.url {
+.message {
 
 	position: relative;
 	z-index: 2;
 	width: 300px;
 
-	input {
+	&--disabled{
+		display:none;
+	}
+	
+	textarea {
 		display: block;
 		width: 300px; 
 		margin-top: 5px;
