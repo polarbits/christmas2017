@@ -9,4 +9,19 @@ body {
 	color: #fff;
 }
 
-
+.form { 
+	&__input{ 
+	   
+	} 
+	   
+	&__form{ 
+		 
+	  } 
+	 
+	&--disabled{ 
+	  display:none 
+	} 
+	&--enabled{ 
+	  display:block 
+	} 
+}
