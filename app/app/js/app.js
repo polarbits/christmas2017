@@ -1,0 +1,1 @@
+const wishes = require('./wishes.js');
