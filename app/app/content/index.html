@@ -2,6 +2,28 @@
   <body style='margin : 0px; overflow: hidden;'>
 
 
-
+        <div>
+<form>
+  <div class="form__form">
+      <label>
+           Sender:
+       <input type="text" name="sender" pattern=".{3,}" required title="3 characters minimum" />
+       </label>
+       <label>
+           Receiver:
+       <input type="text" name="receiver" pattern=".{3,}" required title="3 characters minimum" />
+       </label>
+       <label>
+       wishes:
+       <input type="text" name="wishes" pattern=".{3,}" required title="3 characters minimum" />
+       </label>
+       <button class="send--js" value="Submit">Send wishes</button>
+      </div>
+      </form>
+      <div class="form__input form--disabled">
+<input class="form__link">
+      </div>
+    </div>
+ 
     
   </body>
