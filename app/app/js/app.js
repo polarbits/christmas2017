@@ -1,7 +1,14 @@
 const wishes = require('./wishes.js');
+const Vivus = require('vivus');
 
 
-if (document.querySelector('[name=sender]')){ 
+if (document.querySelector('[name=sender]')){  
+  
+  const logo = new Vivus('bear', {
+    type: 'delayed',
+    duration: 1500,
+    animTimingFunction: Vivus.LINEAR,
+  });
 
 const url = 'https://icy-bush-5836.syncano.space/Christmas2017/post-wishes/'; 
 const button = document.querySelector('.send--js'); 
@@ -17,17 +24,23 @@ button.addEventListener('click', (e) => {
  
   let cryptoId; 
   fetch(apiUrl) 
-    .then(function(resp) { 
-      console.log(resp); 
+    .then(function(resp) {  
       return resp.json(); 
     }) 
-    .then(function(json){ 
-      console.log(json) 
+    .then(function(json){  
       return json; 
     }) 
     .then(function(crypto){ 
       const inputLink = document.querySelector('.form__link'); 
-      inputLink.value = 'https://xmas2017.polarbits.co/wish/#'+crypto; 
+      inputLink.value = `Hey ${receiverValue}!
+I have a special message for you!
+Open this link on your mobile phone (safari/chrome)
+📱 : https://xmas2017.polarbits.co/wish/#${crypto} 
+Allow webpage to access your camera!
+Open the second link on your computer
+💻 : https://xmas2017.polarbits.co/marker/
+Point your phone's camera at the bear marker!
+Merry Christmas 🎄!`
       const form = document.querySelector('.form__form'); 
       form.classList.add('form--disabled'); 
       const inputLinkDiv = document.querySelector('.form__input'); 
