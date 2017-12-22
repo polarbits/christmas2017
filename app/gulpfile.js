@@ -40,7 +40,10 @@ gulp.task('scripts', function() {
       })
     )
     .pipe(browserify())
-    .pipe(uglify())
+    .on('error', function(err) {
+      browserSync.notify(err.message, 3000);
+      this.emit('end');
+    })
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -66,7 +69,7 @@ gulp.task('serve', ['sass', 'html', 'scripts', 'assets'], function() {
     server: './dist',
   });
   gulp.watch('app/scss/**/*', ['sass']);
-  gulp.watch('app/content/*.html', ['html']);
+  gulp.watch('app/content/**/*.html', ['html']);
   gulp.watch('app/partials/*.html', ['html']);
   gulp.watch('app/js/*.js', ['scripts']);
   gulp.watch('app/assets/**/*', ['assets']);

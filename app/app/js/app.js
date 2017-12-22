@@ -1,1 +1,1 @@
-alert('dupa');
+const wishes = require('./wishes.js');
