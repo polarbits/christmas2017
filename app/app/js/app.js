@@ -13,11 +13,24 @@ if (document.querySelector('[name=sender]')){
 const url = 'https://icy-bush-5836.syncano.space/Christmas2017/post-wishes/'; 
 const sendWishesButton = document.querySelector('.send--js'); 
 sendWishesButton.addEventListener('click', (e) => { 
-  e.preventDefault(); 
+  e.preventDefault();
+  const form = document.querySelector('form'); 
+
+  if (!form.checkValidity()){
+    const formInputs = form.getElementsByTagName("input");
+    for (let input of formInputs) {
+      input.classList.remove('invalid');
+      if (!input.checkValidity()){
+        input.classList.add('invalid');
+      }
+    }
+    return;
+  }
+
   const senderValue = document.querySelector('[name=sender]').value; 
   const receiverValue = document.querySelector('[name=receiver]').value; 
   const wishesValue = document.querySelector('[name=wishes]').value; 
- 
+
   const apiUrl = new URL(url),  
     params = {sender: senderValue, receiver: receiverValue, wishes: wishesValue } 
   Object.keys(params).forEach(key=>apiUrl.searchParams.append(key, params[key])); 
@@ -72,6 +85,14 @@ newWishesButton.addEventListener('click', (e) => {
   message.classList.add('message--disabled');
   copyTextareaBtn.textContent = 'Copy to clipboard';
   document.querySelector('[name=receiver]').value = '';
+});
+
+const form = document.querySelector('form');
+form.addEventListener('input', (e)=>{
+  const element = e.srcElement;
+  if (element.checkValidity()){
+    element.classList.remove('invalid');
+  }
 });
 }
 
