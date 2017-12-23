@@ -53,7 +53,8 @@ Allow webpage to access your camera!
 Open the second link on your computer
 💻 : https://xmas2017.polarbits.co/marker/
 Point your phone's camera at the bear marker!
-Merry Christmas 🎄!`
+(Psst you can create your own card here: https://xmas2017.polarbits.co)`
+Merry Christmas 🎄!
       const form = document.querySelector('.form'); 
       form.classList.add('form--disabled');
       const message = document.querySelector('.message'); 
